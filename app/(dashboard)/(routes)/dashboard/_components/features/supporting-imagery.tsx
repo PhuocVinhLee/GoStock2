@@ -10,7 +10,7 @@ const SupportingImageryData = [
   {
     id: 0,
 
-    src: "/asset/my-watch-list/spotify4.png",
+    src: "/asset/portfolio-list/apple1.jpg",
     fullName: "Spotify",
     shortname: "SPOT",
     price: 310.4,
@@ -18,7 +18,7 @@ const SupportingImageryData = [
   },
   {
     id: 1,
-    src: "/asset/my-watch-list/airbnb.png",
+    src: "/asset/portfolio-list/facebook.png",
     fullName: "Airbnb",
     shortname: "ABNB",
     price: 132.72,
@@ -26,7 +26,7 @@ const SupportingImageryData = [
   },
   {
     id: 2,
-    src: "/asset/my-watch-list/sony2.png",
+    src: "/asset/portfolio-list/microsoft.png",
     fullName: "playstation ",
     shortname: "SPOT",
     price: 71.86,
@@ -34,7 +34,7 @@ const SupportingImageryData = [
   },
   {
     id: 3,
-    src: "/asset/my-watch-list/sony2.png",
+    src: "/asset/portfolio-list/google.png",
     fullName: "playstation ",
     shortname: "SPOT",
     price: 71.86,
@@ -42,7 +42,7 @@ const SupportingImageryData = [
   },
   {
     id: 4,
-    src: "/asset/my-watch-list/sony2.png",
+    src: "/asset/portfolio-list/mastercard.png",
     fullName: "playstation ",
     shortname: "SPOT",
     price: 71.86,
@@ -108,7 +108,7 @@ export default function SupportingImagery() {
     startIndex + visibleItems < SupportingImageryData.length;
 
   return (
-    <Card className=" relative  bg-slate-50   w-full   grid grid-cols-1 gap-x-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-3xl p-7">
+    <Card className=" relative  bg-white/50  w-full   grid grid-cols-1 gap-x-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-3xl p-7">
       {SupportingImageryData?.slice(startIndex, startIndex + visibleItems)?.map(
         (data, index) => (
           <div
@@ -116,7 +116,7 @@ export default function SupportingImagery() {
               setIsActive((pre) => (pre === data.id ? -1 : data.id))
             }
             className={cn(
-              "bg-gray-50  rounded-3xl     ",
+              "  bg-slate-50/5   rounded-3xl     ",
               isActive === data.id && " bg-white  shadow-md",
               // "animate-flicker",
               isAnimating
@@ -143,7 +143,7 @@ export default function SupportingImagery() {
 
       <Button
         onClick={handleBackClick}
-        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2  absolute p-2 bg-white rounded-full hover:bg-gray-200 transition-colors duration-200 ${
+        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2  absolute p-2 bg-white rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
           showBackButton ? "opacity-100" : " hidden"
         }`}
         disabled={!showBackButton}
@@ -152,7 +152,7 @@ export default function SupportingImagery() {
       </Button>
       <Button
         onClick={handleNextClick}
-        className={`  right-0  top-1/2 -translate-y-1/2 translate-x-1/2  absolute p-2  bg-white rounded-full hover:bg-gray-200 transition-colors duration-200 ${
+        className={`  right-0  top-1/2 -translate-y-1/2 translate-x-1/2  absolute p-2  bg-white rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
           showNextButton ? "opacity-100" : " hidden"
         }`}
         disabled={!showNextButton}
