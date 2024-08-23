@@ -14,7 +14,7 @@ const DashbroadPage = () => {
 
       <SupportingImagery></SupportingImagery>
       <div className=" grid grid-cols-3 gap-10 ">
-       <div className=" col-span-2  w-full h-full"><Chart></Chart></div>
+       <div className=" col-span-2  w-full h-full "><Chart></Chart></div>
         <MyWatchList></MyWatchList>
       </div>
       

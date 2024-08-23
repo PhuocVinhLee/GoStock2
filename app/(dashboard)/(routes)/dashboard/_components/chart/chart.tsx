@@ -23,6 +23,9 @@ import Image from "next/image";
 import HeaderChart from "./header-chart";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import LineChart from "./line-chart";
+import LineChart2 from "./line-chart-copy";
+import LineChart1 from "./line-chart";
 
 const timeRanges = [
   { label: "1 Day", key: "1day" },
@@ -33,10 +36,16 @@ const timeRanges = [
   { label: "5 Year", key: "1year" },
   { label: "All", key: "all" },
 ];
+
+interface ChartDataItem {
+  date: string; // Format: 'YYYY-MM-DD'
+  value: number;
+}
+
 const Chart = () => {
   const [selectedRange, setSelectedRange] = useState("1week");
   return (
-    <Card className=" rounded-2xl border shadow-sm p-7">
+    <Card className=" rounded-2xl h-full  shadow-me p-7">
       <CardHeader className=" ">
         <CardTitle>
           <HeaderChart></HeaderChart>
@@ -44,7 +53,7 @@ const Chart = () => {
       </CardHeader>
       <CardContent>
         <div>
-          <div className="mb-4 flex flex-wrap items-center justify-stretch gap-5">
+          <div className="mb-4 flex flex-wrap items-center justify-stretch gap-5 px-5">
             {timeRanges?.map((range, index) => (
               <Button 
                 key={range.key}
@@ -62,7 +71,12 @@ const Chart = () => {
           </div>
         </div>
 
-        
+        {/* <LineChart1>
+
+        </LineChart1> */}
+        <LineChart2 >
+          
+          </LineChart2>
       </CardContent>
     </Card>
   );
