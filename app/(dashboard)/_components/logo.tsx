@@ -4,7 +4,7 @@ import Link from "next/link";
 const Logo = () => {
   return (
     <Link href={`/`} className=" ">
-      <div className="flex  items-center justify-normal gap-x-2 ">
+      <div className="flex  items-center justify-center gap-x-1  h-[100px]  ">
       <Image
           src= "/asset/logo.png"
           alt="logo"

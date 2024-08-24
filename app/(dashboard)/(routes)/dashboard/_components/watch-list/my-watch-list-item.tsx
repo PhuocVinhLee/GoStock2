@@ -24,7 +24,7 @@ const MyWatchListItem = ({
   return (
     <div
       className={cn(
-        "flex items-center justify-between py-4 shadow-sm relative    ",
+        "flex items-center justify-between py-4 relative    ",
         className
       )}
     >

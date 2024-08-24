@@ -45,9 +45,9 @@ interface ChartDataItem {
 const Chart = () => {
   const [selectedRange, setSelectedRange] = useState("1week");
   return (
-    <Card className=" rounded-2xl h-full  shadow-me p-7">
-      <CardHeader className=" ">
-        <CardTitle>
+    <Card className=" rounded-2xl h-full  shadow-me p-7 ">
+      <CardHeader className="  p-5  ">
+        <CardTitle className="">
           <HeaderChart></HeaderChart>
         </CardTitle>
       </CardHeader>
@@ -55,16 +55,15 @@ const Chart = () => {
         <div>
           <div className="mb-4 flex flex-wrap items-center justify-stretch gap-5 px-5">
             {timeRanges?.map((range, index) => (
-              <Button 
+              <Button
                 key={range.key}
                 variant={selectedRange === range.key ? "default" : "outline"}
                 onClick={() => setSelectedRange(range.key)}
                 className="text-xs  rounded-full"
               >
-               
                 <div className="flex items-center  justify-between gap-x-1">
-                {  range.key==="all"  &&<RiBarChartBoxLine />}
-                {range.label}
+                  {range.key === "all" && <RiBarChartBoxLine />}
+                  {range.label}
                 </div>
               </Button>
             ))}
@@ -74,9 +73,7 @@ const Chart = () => {
         {/* <LineChart1>
 
         </LineChart1> */}
-        <LineChart2 >
-          
-          </LineChart2>
+        <LineChart2></LineChart2>
       </CardContent>
     </Card>
   );

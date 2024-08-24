@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-//import { useRouter } from "next/router";
+import { IconType } from 'react-icons';
+
 
 interface SidebarItemProps {
-  icon: LucideIcon;
+  icon: IconType;
   label: string;
   href: string;
 }
@@ -25,9 +26,9 @@ const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
       onClick={onclick}
       type="button"
       className={cn(
-        "flex items-center mx-5 rounded-md  dark:text-white gap-x-2 text-sm font-[500] px-3 transition-all hover:text-slate-600 hover:bg-slate-300/20",
+        "flex items-center justify-between  rounded-md  dark:text-white gap-x-2 text-sm font-[500] px-3 transition-all hover:text-slate-600 hover:bg-slate-300/20",
         isActive &&
-          "  bg-slate-200 hover:bg-slate-200/20 "
+          "  bg-slate-200/20 hover:bg-slate-200/20 "
       )}
     >
       <div className="flex items-center gap-x-2 py-4">
@@ -40,6 +41,10 @@ const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
         />
         {label}
       </div>
+     
+      {href ==='/setting' && <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white">
+ <span className=" text-xs"> 6</span>
+</div>}
       
     </button>
   );

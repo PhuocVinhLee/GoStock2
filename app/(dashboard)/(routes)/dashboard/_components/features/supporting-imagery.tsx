@@ -29,7 +29,7 @@ const SupportingImageryData = [
     src: "/asset/portfolio-list/microsoft.png",
     fullName: "playstation ",
     shortname: "SPOT",
-    price: 71.86,
+    price: 140.86,
     referred: 0.98,
   },
   {
@@ -37,7 +37,7 @@ const SupportingImageryData = [
     src: "/asset/portfolio-list/google.png",
     fullName: "playstation ",
     shortname: "SPOT",
-    price: 71.86,
+    price: 140.98,
     referred: 0.98,
   },
   {

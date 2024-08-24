@@ -63,7 +63,7 @@ const MyWatchListData = [
 const MyWatchList = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(1);
   return (
-    <Card className="z-10  flex flex-col gap-y-10 w-full py-12 px-7 bg-white rounded-3xl shadow-lg">
+    <Card className="z-10  flex flex-col gap-y-5 w-full py-12  px-7 bg-white rounded-3xl shadow-lg">
       <div className={cn( " flex items-center  justify-between" ,  selectedIndex !== null && "blur-[1px]"
       )}>
 
@@ -80,13 +80,15 @@ const MyWatchList = () => {
               setSelectedIndex((pre) => (pre != data?.id ? data?.id : null))
             }
             key={index}
-            className=" border-b-2 "
+            className={cn(
+               index +1 < MyWatchListData?.length && "border-b-2"
+            )}
           >
           
             <MyWatchListItem
               className={cn(
                 selectedIndex === index
-                  ? "z-40   relative  bottom-1/2  right-1/2 translate-x-1/2  translate-y-1/2    w-full bg-white rounded-3xl scale-y-105  scale-x-[1.22] px-6 py-6"
+                  ? "z-40   relative  bottom-1/2  right-1/2 translate-x-1/2  translate-y-1/2    w-full bg-white rounded-3xl scale-y-105  scale-x-[1.22] px-6 "
                   :  selectedIndex !== null && "blur-[1px]"
               )}
               id={data?.id}

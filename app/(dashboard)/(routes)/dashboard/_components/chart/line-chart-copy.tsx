@@ -84,7 +84,7 @@ export default function LineChart2() {
               bottom: 0,
             }}>
             <CartesianGrid
-              strokeDasharray="3 3"
+              
               vertical={true}
               stroke="#e0e0e0"
             />
@@ -145,7 +145,7 @@ export default function LineChart2() {
            // type="monotone"
            activeDot={{ r: 7 }}
             dataKey="value"
-           stroke="#08d23a"
+           stroke="#42bd84"
              fill="#eefef2"
             strokeWidth={3}
             dot={false}

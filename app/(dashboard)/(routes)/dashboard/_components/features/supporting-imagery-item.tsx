@@ -1,5 +1,10 @@
 import Image from "next/image";
 import Chart from "./chart";
+import { cn } from "@/lib/utils";
+import { TiArrowDown } from "react-icons/ti";
+import { TiArrowUp } from "react-icons/ti";
+import { LuArrowUp } from "react-icons/lu";
+import { LuArrowDown } from "react-icons/lu";
 
 interface SupportingImageryItemProps {
   id: number;
@@ -21,7 +26,7 @@ const SupportingImageryItem = ({
   className,
 }: SupportingImageryItemProps) => {
   return (
-    <div className=" p-7   flex flex-col   gap-y-5  w-full  ">
+    <div className=" p-5   flex flex-col   gap-y-5  w-full  ">
       <div className="flex items-center justify-between ">
         <div className=" w-full flex items-center  gap-x-2">
           <div className="relative">
@@ -36,17 +41,19 @@ const SupportingImageryItem = ({
           <span className=" font-semibold">{fullName}</span>
         </div>
 
-        <Chart></Chart>
+        <Chart up={referred>0}></Chart>
       </div>
 
       <div className="space-y-5  p-0">
         <div className="flex justify-between ">
-          <span className=" text-gray-500">Total Shares{id}</span>
-          <span className=" font-semibold">$310,40</span>
+          <span className=" text-gray-500">Total Shares</span>
+          <span className=" font-semibold">${`${price}`}</span>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <span className="  text-gray-500">Total Return</span>
-          <span className=" font-semibold text-red-500">-1,10% ↓</span>
+          <span className={cn(" flex items-center justify-between font-semibold",
+            referred >=0 ? "text-green-500" :" text-red-500"
+          )}>{`${referred}%`}  {referred < 0 ?  <  LuArrowDown  /> : <LuArrowUp  /> }</span>
         </div>
       </div>
     </div>
