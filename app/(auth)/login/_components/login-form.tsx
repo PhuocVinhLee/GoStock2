@@ -20,6 +20,8 @@ import {
   BarChartIcon,
   DollarSignIcon,
   Loader2,
+  EyeOffIcon,
+  EyeIcon,
 } from "lucide-react";
 
 import Image from "next/image";
@@ -41,8 +43,7 @@ import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import ButtonLogin from "./button-login";
-import ForgetPassword from "./forget-password";
+import ButtonLogin from "../../_components/button-login";
 
 const formSchema = z.object({
   email: z
@@ -85,6 +86,7 @@ const ButtonDataLogin = [
 const LoginForm = () => {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [handleErrorFromSever, setHandleErrorFromSever] = useState<null | {
     type: string;
     message: string;
@@ -131,14 +133,11 @@ const LoginForm = () => {
       setIsLogin(false);
     }
   };
-  const handleForgotPassword = (e: React.FormEvent) => {
-    e.preventDefault()
-    // console.log('Password reset requested for:', email)
-  }
 
-  const toggleForgotPassword = () => {
-    setIsForgotPassword(!isForgotPassword)
-  }
+ 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className=" relative w-1/2 p-10 py-14">
@@ -172,7 +171,8 @@ const LoginForm = () => {
           </div>{" "}
         </CardTitle>
       </CardHeader>
-    {!isForgotPassword ?   <Form {...form}>
+
+      <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
             control={form.control}
@@ -228,23 +228,32 @@ const LoginForm = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input
-                    onClick={() => setHandleErrorFromSever(null)}
-                    placeholder="password"
-                    className={cn(
-                      " border",
-                      fieldState.isDirty &&
-                        (fieldState.error ||
-                          (handleErrorFromSever?.type === "password" &&
-                            " border-red-500"))
-                    )}
-                    {...field}
-                    onBlur={() => form.trigger("password")} // Trigger validation on blur
-                    onChange={(e) => {
-                      field.onChange(e); // Update the value
-                      form.trigger("password"); // Trigger validation on change
-                    }}
-                  />
+                <div className="relative">
+                      <Input
+                      type={showPassword ? "text" : "password"}
+                        onClick={() => setHandleErrorFromSever(null)}
+                        className={cn(
+                          fieldState.isDirty &&
+                            (fieldState.error ||
+                              (handleErrorFromSever?.type === "email" &&
+                                " border-red-500"))
+                        )}
+                        placeholder="Enter ypur new password"
+                        {...field}
+                        onBlur={() => form.trigger("password")} // Trigger validation on blur
+                        onChange={(e) => {
+                          field.onChange(e); // Update the value
+                          form.trigger("password"); // Trigger validation on change
+                        }}
+                      />
+                      <button
+                      type="button"
+                      onClick={togglePasswordVisibility}
+                      className="absolute inset-y-0 right-0 flex items-center pr-3"
+                    >
+                      {showPassword ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
+                    </button>
+                    </div>
                 </FormControl>
 
                 <FormMessage
@@ -270,15 +279,18 @@ const LoginForm = () => {
             Sign In
           </Button>
         </form>
-      </Form>: <ForgetPassword></ForgetPassword> }
+      </Form>
+
       <div className=" text-center mt-6">
         <Button
           type="button"
           variant="link"
-          onClick={toggleForgotPassword}
+          onClick={() => {
+            router.push("/forget-password");
+          }}
           className="text-sm text-blue-600 hover:text-blue-800"
         >
-          {isForgotPassword ? "Back to Login" : "Forgot Password?"}
+          Forgot Password?
         </Button>
       </div>
 
