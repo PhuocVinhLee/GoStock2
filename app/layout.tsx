@@ -10,6 +10,7 @@ const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+      <Toaster />
+        {children}</body>
     </html>
   );
 }

@@ -26,7 +26,7 @@ const SidebarItem = ({ icon: Icon, label, href }: SidebarItemProps) => {
       onClick={onclick}
       type="button"
       className={cn(
-        "flex items-center justify-between  rounded-md  dark:text-white gap-x-2 text-sm font-[500] px-3 transition-all hover:text-slate-600 hover:bg-slate-300/20",
+        "flex items-center w-full justify-between  rounded-md  dark:text-white gap-x-2 text-sm font-[500] px-3 transition-all hover:text-slate-600 hover:bg-slate-300/20",
         isActive &&
           "  bg-slate-200/20 hover:bg-slate-200/20 "
       )}

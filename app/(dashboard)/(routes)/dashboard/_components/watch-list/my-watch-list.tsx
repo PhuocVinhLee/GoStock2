@@ -63,8 +63,8 @@ const MyWatchListData = [
 const MyWatchList = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(1);
   return (
-    <Card className="z-10  flex flex-col gap-y-5 w-full py-12  px-7 bg-white rounded-3xl shadow-lg">
-      <div className={cn( " flex items-center  justify-between" ,  selectedIndex !== null && "blur-[1px]"
+    <Card className="z-10   flex flex-col gap-y-5 w-full  py-12  px-7 lg:py-7 xl:py-12 bg-white rounded-3xl shadow-lg">
+      <div className={cn( " flex items-center  justify-between" ,  selectedIndex !== null && ""
       )}>
 
         <h6 className=" text-lg font-bold">My watchlist</h6>
@@ -86,11 +86,11 @@ const MyWatchList = () => {
           >
           
             <MyWatchListItem
-              className={cn(
-                selectedIndex === index
-                  ? "z-40   relative  bottom-1/2  right-1/2 translate-x-1/2  translate-y-1/2    w-full bg-white rounded-3xl scale-y-105  scale-x-[1.22] px-6 "
-                  :  selectedIndex !== null && "blur-[1px]"
-              )}
+              // className={cn(
+              //   selectedIndex === index
+              //     ? "z-40   relative  border shadow-lg   bg-white rounded-xl scale-y-105  scale-x-[1.22] px-5 "
+              //     :  selectedIndex !== null && "blur-[1px]"
+              // )}
               id={data?.id}
               src={data?.src}
               fullName={data?.fullName}

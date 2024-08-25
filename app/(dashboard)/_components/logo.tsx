@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+
+const Logo = ( ) => {
   return (
     <Link href={`/`} className=" ">
       <div className="flex  items-center justify-center gap-x-1  h-[100px]  ">
       <Image
-          src= "/asset/logo.png"
+          src= "/asset/logo2.png"
           alt="logo"
           width={34}
           height={34}

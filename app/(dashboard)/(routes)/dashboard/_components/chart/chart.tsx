@@ -45,7 +45,7 @@ interface ChartDataItem {
 const Chart = () => {
   const [selectedRange, setSelectedRange] = useState("1week");
   return (
-    <Card className=" rounded-2xl h-full  shadow-me p-7 ">
+    <Card className=" rounded-2xl h-full  shadow-me p-7 lg:p-3 xl:p-7 ">
       <CardHeader className="  p-5  ">
         <CardTitle className="">
           <HeaderChart></HeaderChart>
