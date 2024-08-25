@@ -3,7 +3,7 @@ import React from 'react'
 
 const RolePassword = () => {
   return (
-    <div className="w-1/2 bg-gray-100 p-8 flex flex-col justify-center">
+    <div className="w-full hidden bg-gray-100 p-8 sm:flex flex-col justify-center">
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Password Reset</h2>
           <p className="text-gray-600 mb-8 text-center">
             Create a strong, unique password to keep your GoStock account secure.

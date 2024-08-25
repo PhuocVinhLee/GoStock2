@@ -8,124 +8,67 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ImSad } from "react-icons/im";
 
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
-  ChevronUpIcon,
-  LockIcon,
-  MailIcon,
-  TrendingUpIcon,
-  BarChartIcon,
-  DollarSignIcon,
-  Loader2,
-  EyeOffIcon,
-  EyeIcon,
-} from "lucide-react";
 
-import Image from "next/image";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import toast from "react-hot-toast";
-import { useRouter } from "next/navigation";
-import ButtonLogin from "../../_components/button-login";
+import { Form } from "@/components/ui/form";
 
-const formSchema = z.object({
-  email: z
-    .string()
-    .min(2, {
-      message: "Email must be at least 2 characters.",
-    })
-    .email({
-      message: "Invalid email address.",
-    }),
-  password: z
-    .string()
-    .min(8, {
-      message: "Password must be at least 8 characters.",
-    })
-    .regex(/[A-Z]/, {
-      message: "Password must contain at least one uppercase letter.",
-    })
-    .regex(/[a-z]/, {
-      message: "Password must contain at least one lowercase letter.",
-    })
-    .regex(/[0-9]/, {
-      message: "Password must contain at least one number.",
-    })
-    .regex(/[^a-zA-Z0-9]/, {
-      message: "Password must contain at least one special character.",
-    }),
-});
+import toast from "react-hot-toast";
+
+import ButtonLogin from "../../_components/social-login-buttons";
+import { emailPasswordSchema } from "../../_components/validationSchemas";
+import Logo from "../../_components/logo";
+
+import ButtonLink from "../../_components/button-link";
+import CustomInput from "../../_components/custom-input";
+import SocialLogins from "../../_components/social-logins";
 
 const templateData = {
   email: "me@example.com",
   password: "Example@123456789",
 };
 
-const ButtonDataLogin = [
-  { src: "/asset/portfolio-list/google.png", label: "Google" },
-  { src: "/asset/portfolio-list/facebook.png", label: "Facebook" },
-];
-
 const LoginForm = () => {
-  const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [handleErrorFromSever, setHandleErrorFromSever] = useState<null | {
-    type: string;
-    message: string;
-  }>(null);
-  const [isForgotPassword, setIsForgotPassword] = useState(false);
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+
+  const form = useForm<z.infer<typeof emailPasswordSchema>>({
+    resolver: zodResolver(emailPasswordSchema),
     defaultValues: {
       email: "me@example.com",
       password: "Example@123456789",
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof emailPasswordSchema>) => {
     try {
       setIsLogin(true);
 
       await new Promise((resolve) => setTimeout(resolve, 3000));
-      console.log("lasnc");
+
       if (values.email != templateData.email) {
-        return setHandleErrorFromSever({
-          type: "email",
-          message: "Invalid email address1",
+        return form.setError("email", {
+          type: "manual",
+          message: "Invalid email address.",
         });
       }
       if (values.password != templateData.password) {
-        return setHandleErrorFromSever({
-          type: "password",
-          message: "Invalid password",
+        return form.setError("password", {
+          type: "manual",
+          message: "Invalid password.",
         });
       }
       if (
         values.email === templateData.email &&
         values.password === templateData.password
       ) {
-        setHandleErrorFromSever(null);
       }
 
-      router.push("/dashboard");
+      // router.push("/dashboard");
       toast.success("You have logged in successfully.");
     } catch (error) {
       toast.error("Some thing went wrong!");
@@ -134,146 +77,24 @@ const LoginForm = () => {
     }
   };
 
- 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
   return (
-    <div className=" relative w-1/2 p-10 py-14">
+    <div className=" relative w-full p-10 py-14">
       <CardHeader className=" p-0  pb-5">
         <CardTitle className="text-2xl font-bold  flex items-center justify-center w-full ">
           <div>
-            <div className="flex  items-center justify-center gap-x-1  ">
-              <div
-                className={cn(
-                  isLogin &&
-                    "absolute   h-full w-full bg-slate-500/20 top-0 right-0 rounded-md flex items-center justify-center"
-                )}
-              >
-                <Image
-                  src={isLogin ? "/asset/logowhite3.png" : "/asset/logo2.png"}
-                  alt="logo"
-                  width={40}
-                  height={40}
-                  className={cn(
-                    " rounded-full",
-                    isLogin &&
-                      "  transition-all duration-500 ease-in-out  h-10 w-10 rounded-full animate-spin"
-                  )}
-                />
-              </div>
-              {isLogin && (
-                <div className="border w-10 h-10 rounded-full  bg-black"> </div>
-              )}
-              <h2 className=" text-2xl font-bold ">GoStock</h2>
-            </div>
+            <Logo isLogin={isLogin}></Logo>
           </div>{" "}
         </CardTitle>
       </CardHeader>
 
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field, fieldState }) => {
-              console.log(fieldState);
-              return (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      onClick={() => setHandleErrorFromSever(null)}
-                      className={cn(
-                        fieldState.isDirty &&
-                          (fieldState.error ||
-                            (handleErrorFromSever?.type === "email" &&
-                              " border-red-500"))
-                      )}
-                      placeholder="email"
-                      {...field}
-                      onBlur={() => form.trigger("email")} // Trigger validation on blur
-                      onChange={(e) => {
-                        field.onChange(e); // Update the value
-                        form.trigger("email"); // Trigger validation on change
-                      }}
-                    />
-                  </FormControl>
-
-                  <FormMessage
-                    className={cn(
-                      " text-xs",
-                      fieldState.isDirty &&
-                        (fieldState.error ||
-                          handleErrorFromSever?.type == "email") &&
-                        " border-red-500"
-                    )}
-                  >
-                    {fieldState.isDirty &&
-                      (fieldState.error
-                        ? fieldState.error?.message
-                        : handleErrorFromSever?.type === "email"
-                        ? handleErrorFromSever?.message
-                        : "")}
-                  </FormMessage>
-                </FormItem>
-              );
-            }}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field, fieldState }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                <div className="relative">
-                      <Input
-                      type={showPassword ? "text" : "password"}
-                        onClick={() => setHandleErrorFromSever(null)}
-                        className={cn(
-                          fieldState.isDirty &&
-                            (fieldState.error ||
-                              (handleErrorFromSever?.type === "email" &&
-                                " border-red-500"))
-                        )}
-                        placeholder="Enter ypur new password"
-                        {...field}
-                        onBlur={() => form.trigger("password")} // Trigger validation on blur
-                        onChange={(e) => {
-                          field.onChange(e); // Update the value
-                          form.trigger("password"); // Trigger validation on change
-                        }}
-                      />
-                      <button
-                      type="button"
-                      onClick={togglePasswordVisibility}
-                      className="absolute inset-y-0 right-0 flex items-center pr-3"
-                    >
-                      {showPassword ? <EyeOffIcon size={20} /> : <EyeIcon size={20} />}
-                    </button>
-                    </div>
-                </FormControl>
-
-                <FormMessage
-                  className={cn(
-                    " text-xs",
-                    fieldState.isDirty &&
-                      (fieldState.error ||
-                        handleErrorFromSever?.type == "password") &&
-                      " border-red-500"
-                  )}
-                >
-                  {fieldState.isDirty &&
-                    (fieldState.error
-                      ? fieldState.error?.message
-                      : handleErrorFromSever?.type === "password"
-                      ? handleErrorFromSever?.message
-                      : "")}
-                </FormMessage>
-              </FormItem>
-            )}
+          <CustomInput key="email" label="Email" type="email" form={form} />
+          <CustomInput
+            key="password"
+            label="Password"
+            type="password"
+            form={form}
           />
           <Button type="submit" className="w-full">
             Sign In
@@ -282,35 +103,24 @@ const LoginForm = () => {
       </Form>
 
       <div className=" text-center mt-6">
-        <Button
-          type="button"
-          variant="link"
-          onClick={() => {
-            router.push("/forget-password");
-          }}
-          className="text-sm text-blue-600 hover:text-blue-800"
-        >
-          Forgot Password?
-        </Button>
+        <ButtonLink
+          href="/forget-password"
+          label="Forget password"
+        ></ButtonLink>
       </div>
 
       <Separator className="my-6" />
       <CardFooter className="flex flex-col space-y-4 p-0">
-        <div className="grid grid-cols-2 gap-4  w-full">
-          {ButtonDataLogin?.map((data, index) => (
-            <ButtonLogin
-              key={index}
-              src={data.src}
-              label={data?.label}
-            ></ButtonLogin>
-          ))}
-        </div>
+        <SocialLogins></SocialLogins>
 
         <div className="text-center text-sm text-gray-600">
           Don't have an account?{" "}
-          <a href="#" className="text-black font-semibold hover:underline">
+          <Link
+            href="/sign-up"
+            className="    font-semibold text-sm text-blue-600 hover:text-blue-800"
+          >
             Sign up
-          </a>
+          </Link>
         </div>
       </CardFooter>
     </div>

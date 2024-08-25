@@ -5,7 +5,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 
 
 import ForgetPasswordForm from './_components/forget-password-form'
-import Introduce from "../_components/introduce"
+
 import RolePassword from "./_components/role-password"
 
 export default function ForgetPasswordPage() {

@@ -6,7 +6,7 @@ import { ChevronUpIcon, LockIcon, MailIcon, TrendingUpIcon, BarChartIcon, Dollar
 
 const Introduce = () => {
   return (
-    <div className="w-1/2 bg-gray-100 p-8 flex flex-col justify-center">
+    <div className="w-full hidden  bg-gray-100 p-8 sm:flex flex-col justify-center">
     <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Welcome to GoStock</h2>
     <p className="text-gray-600 mb-8 text-center">
       Your all-in-one platform for smart stock trading and portfolio management.
