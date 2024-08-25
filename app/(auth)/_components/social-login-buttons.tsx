@@ -22,7 +22,7 @@ const ButtonLogin = ({ src, label }: ButtonLoginProp) => {
         handelLogin()
       }}
       variant="outline"
-      className="w-full border-gray-200 hover:bg-gray-50 gap-x-2"
+      className="w-full border-gray-200 gap-x-2"
     >
       <Image
         src={src}

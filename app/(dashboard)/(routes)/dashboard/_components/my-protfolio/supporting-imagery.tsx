@@ -72,7 +72,7 @@ export default function SupportingImagery() {
     const handleResize = () => {
       if (window.innerWidth >= 1280) setVisibleItems(4);
       else if (window.innerWidth >= 1024) setVisibleItems(3);
-      else if(window.innerWidth >= 768) setVisibleItems(2)
+      else if (window.innerWidth >= 768) setVisibleItems(2);
       else if (window.innerWidth >= 640) setVisibleItems(2);
       else setVisibleItems(1);
     };
@@ -109,7 +109,7 @@ export default function SupportingImagery() {
     startIndex + visibleItems < SupportingImageryData.length;
 
   return (
-    <Card className=" relative  bg-white/50  w-full   grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-3xl gap-x-3 lg:gap-x-1 md:gap-x-16 p-7 lg:p-3 xl:p-7">
+    <Card className=" relative  shadow-sm border-none  bg-white/50 dark:bg-customDark/60  w-full   grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-3xl gap-x-3 lg:gap-x-1 md:gap-x-16 p-7 lg:p-3 xl:p-7">
       {SupportingImageryData?.slice(startIndex, startIndex + visibleItems)?.map(
         (data, index) => (
           <div
@@ -117,8 +117,8 @@ export default function SupportingImagery() {
               setIsActive((pre) => (pre === data.id ? -1 : data.id))
             }
             className={cn(
-              "  bg-slate-50/5   rounded-3xl  w-auto     ",
-              isActive === data.id && " bg-white  shadow-md",
+              "  bg-slate-50/5  dark: dark:bg-customDark/5   rounded-3xl  w-auto     ",
+              isActive === data.id && " bg-white dark:bg-customDark  shadow-md",
               // "animate-flicker",
               isAnimating
                 ? animationDirection === "right"
@@ -144,7 +144,7 @@ export default function SupportingImagery() {
 
       <Button
         onClick={handleBackClick}
-        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2  absolute p-2 bg-white rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
+        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2  absolute p-2 bg-white  rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
           showBackButton ? "opacity-100" : " hidden"
         }`}
         disabled={!showBackButton}

@@ -7,7 +7,7 @@ import Sidebar from "./_components/sidebar";
 
 const DashboardPage = ({ children }: { children: React.ReactNode }) => {
   return (
-   < div className=" h-full  ">
+   < div className=" h-full   ">
       <div className="h-[100px] lg:pl-72 fixed inset-y-0 w-full z-50">
         <Nav></Nav>
       </div>
@@ -16,7 +16,7 @@ const DashboardPage = ({ children }: { children: React.ReactNode }) => {
         <Sidebar></Sidebar>
       </div>
 
-      <main className=" h-full lg:pl-72 pt-[100px] bg-slate-100/20">{children}</main>
+      <main className=" h-full lg:pl-72 pt-[100px] dark:bg-black/85 bg-slate-100/50">{children}</main>
     </div>
   );
 };

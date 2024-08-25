@@ -113,7 +113,7 @@ const LoginForm = () => {
       <CardFooter className="flex flex-col space-y-4 p-0">
         <SocialLogins></SocialLogins>
 
-        <div className="text-center text-sm text-gray-600">
+        <div className="text-center text-sm text-gray-600 dark:text-white">
           Don't have an account?{" "}
           <Link
             href="/sign-up"

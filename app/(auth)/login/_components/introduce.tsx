@@ -6,9 +6,9 @@ import { ChevronUpIcon, LockIcon, MailIcon, TrendingUpIcon, BarChartIcon, Dollar
 
 const Introduce = () => {
   return (
-    <div className="w-full hidden  bg-gray-100 p-8 sm:flex flex-col justify-center">
-    <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Welcome to GoStock</h2>
-    <p className="text-gray-600 mb-8 text-center">
+    <div className="w-full hidden  bg-gray-100  dark:text-white  dark:bg-black/50 p-8 sm:flex flex-col justify-center">
+    <h2 className="text-3xl font-bold mb-6 text-center text-gray-800  dark:text-white">Welcome to GoStock</h2>
+    <p className="text-gray-600 dark:text-white mb-8 text-center">
       Your all-in-one platform for smart stock trading and portfolio management.
     </p>
     <div className="space-y-6">
@@ -17,8 +17,8 @@ const Introduce = () => {
           <TrendingUpIcon className="h-6 w-6 text-green-600" />
         </div>
         <div>
-          <h3 className="font-semibold text-gray-800">Real-time Trading</h3>
-          <p className="text-sm text-gray-600">Stay updated with live market data</p>
+          <h3 className="font-semibold text-gray-800  dark:text-white">Real-time Trading</h3>
+          <p className="text-sm text-gray-600  dark:text-white">Stay updated with live market data</p>
         </div>
       </div>
       <div className="flex items-center">
@@ -26,8 +26,8 @@ const Introduce = () => {
           <BarChartIcon className="h-6 w-6 text-blue-600" />
         </div>
         <div>
-          <h3 className="font-semibold text-gray-800">Advanced Analytics</h3>
-          <p className="text-sm text-gray-600">Make informed decisions with our tools</p>
+          <h3 className="font-semibold text-gray-800  dark:text-white">Advanced Analytics</h3>
+          <p className="text-sm text-gray-600  dark:text-white">Make informed decisions with our tools</p>
         </div>
       </div>
       <div className="flex items-center">
@@ -35,8 +35,8 @@ const Introduce = () => {
           <DollarSignIcon className="h-6 w-6 text-purple-600" />
         </div>
         <div>
-          <h3 className="font-semibold text-gray-800">Portfolio Management</h3>
-          <p className="text-sm text-gray-600">Track and optimize your investments</p>
+          <h3 className="font-semibold text-gray-800  dark:text-white">Portfolio Management</h3>
+          <p className="text-sm text-gray-600  dark:text-white ">Track and optimize your investments</p>
         </div>
       </div>
     </div>

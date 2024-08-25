@@ -26,7 +26,7 @@ const SupportingImageryItem = ({
   className,
 }: SupportingImageryItemProps) => {
   return (
-    <div className=" p-5   flex flex-col   gap-y-5  w-full  ">
+    <div className=" p-5   flex flex-col gap-y-5  w-full  ">
       <div className="flex items-center justify-between ">
         <div className=" w-full flex items-center  gap-x-2">
           <div className="relative">
@@ -46,11 +46,11 @@ const SupportingImageryItem = ({
 
       <div className="space-y-5  p-0">
         <div className="flex justify-between ">
-          <span className=" text-gray-500">Total Shares</span>
+          <span className=" text-gray-500 dark:text-white">Total Shares</span>
           <span className=" font-semibold">${`${price}`}</span>
         </div>
         <div className="flex justify-between ">
-          <span className="  text-gray-500">Total Return</span>
+          <span className="  text-gray-500 dark:text-white">Total Return</span>
           <span className={cn(" flex items-center justify-between font-semibold",
             referred >=0 ? "text-green-500" :" text-red-500"
           )}>{`${referred}%`}  {referred < 0 ?  <  LuArrowDown  /> : <LuArrowUp  /> }</span>

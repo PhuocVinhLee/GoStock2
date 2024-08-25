@@ -4,7 +4,7 @@ import { LuArrowUp } from 'react-icons/lu'
 
 const TotalInvestment = () => {
   return (
-    <Card className=' bg-black text-white p-3 flex items-center rounded-xl justify-between'>
+    <Card className=' bg-black dark:bg-white dark:text-black text-white p-3 flex items-center rounded-xl justify-between'>
         <div className='flex-col flex items-centen justify-start'>
             <p className='text-sm'>Total Investment</p>
             <p className='text-xl'>$5380.90</p>

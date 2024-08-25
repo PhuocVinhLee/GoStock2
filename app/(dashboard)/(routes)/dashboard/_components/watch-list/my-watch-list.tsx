@@ -63,7 +63,7 @@ const MyWatchListData = [
 const MyWatchList = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(1);
   return (
-    <Card className="z-10   flex flex-col gap-y-5 w-full  py-12  px-7 lg:py-7 xl:py-12 bg-white rounded-3xl shadow-lg">
+    <Card className="z-10   flex flex-col gap-y-5 w-full  py-12  px-7 lg:py-7 xl:py-12 bg-white dark:bg-customDark rounded-3xl shadow-lg">
       <div className={cn( " flex items-center  justify-between" ,  selectedIndex !== null && ""
       )}>
 

@@ -49,6 +49,10 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+        
+        // "custom-light-bg": "#f7f3e9",
+        // "custom-dark-bg": "#2a2a2a",
+        customDark: "hsl(222.2, 84%, 4.9%)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

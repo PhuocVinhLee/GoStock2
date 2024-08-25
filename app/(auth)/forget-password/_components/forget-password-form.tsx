@@ -142,7 +142,8 @@ const ForgetPasswordForm = () => {
       <CardFooter className="flex flex-col space-y-4 p-0">
         <SocialLogins></SocialLogins>
 
-        <div className="text-center text-sm text-gray-600">
+        <div className="text-center text-sm dark:text-white
+         text-gray-600">
           Don't have an account?{" "}
           <Link
             href="/sign-up"

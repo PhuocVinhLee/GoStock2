@@ -9,6 +9,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { IoIosNotificationsOutline } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa6";
 import { HiOutlineBell } from "react-icons/hi";
+import { ModeToggle } from "./mode-toggle-theme";
 
 const NavbarRoutes = () => {
   return (
@@ -16,16 +17,17 @@ const NavbarRoutes = () => {
       <div className=" flex items-center justify-end gap-x-4 w-full ">
         <div>
           <MdOutlineEmail
-            className=" text-slate-500"
+            className=" text-slate-500  dark:text-white"
             size={30}
           ></MdOutlineEmail>{" "}
         </div>
         <div className="  relative flex items-center justify-center">
-          <HiOutlineBell className="text-slate-500" size={30} />
+          <HiOutlineBell className="text-slate-500 dark:text-white" size={30} />
           <div className="  absolute top-0 right-0 w-3 h-3 bg-red-600 rounded-full flex items-center justify-center text-white">
             <span className=" text-[0.6rem]"> 5</span>
           </div>
         </div>
+        <div className=" "><ModeToggle></ModeToggle></div>
         <div className=" border-l-2 border h-7"></div>
         <div className=" flex items-center justify-between gap-x-3">
           <Avatar className="w-8 h-8">

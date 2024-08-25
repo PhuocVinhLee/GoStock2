@@ -1,13 +1,20 @@
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-
-
-
-const DashboardPage = ({ children }: { children: React.ReactNode }) => {
+const HomePage = ({ children }: { children: React.ReactNode }) => {
   return (
-   < div className=" h-full  ">
-      afjnlkasnlkasnldnasldn
+   < div className=" h-full w-full m-5  flex  gap-x-5 ">
+     <Link href="/login" >
+     <Button> Login page </Button>
+     </Link>
+     <Link href="/sign-up" >
+     <Button> Sign up page </Button>
+     </Link>
+     <Link href="/forget-password" >
+     <Button> Forget password page </Button>
+     </Link>
     </div>
   );
 };
 
-export default DashboardPage;
+export default HomePage;

@@ -17,15 +17,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RiBarChartBoxLine } from "react-icons/ri";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+
+
 import HeaderChart from "./header-chart";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import LineChart from "./line-chart";
-import LineChart2 from "./line-chart-copy";
-import LineChart1 from "./line-chart";
+import LineChartCpn from "./line-chart";
+
+
 
 const timeRanges = [
   { label: "1 Day", key: "1day" },
@@ -37,10 +36,6 @@ const timeRanges = [
   { label: "All", key: "all" },
 ];
 
-interface ChartDataItem {
-  date: string; // Format: 'YYYY-MM-DD'
-  value: number;
-}
 
 const Chart = () => {
   const [selectedRange, setSelectedRange] = useState("1week");
@@ -70,10 +65,8 @@ const Chart = () => {
           </div>
         </div>
 
-        {/* <LineChart1>
-
-        </LineChart1> */}
-        <LineChart2></LineChart2>
+       
+        <LineChartCpn></LineChartCpn>
       </CardContent>
     </Card>
   );

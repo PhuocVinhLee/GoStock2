@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import SupportingImagery from "./_components/features/supporting-imagery";
+import SupportingImagery from "./_components/my-protfolio/supporting-imagery";
 import MyWatchList from "./_components/watch-list/my-watch-list";
 import Chart from "./_components/chart/chart";
 const DashbroadPage = () => {
