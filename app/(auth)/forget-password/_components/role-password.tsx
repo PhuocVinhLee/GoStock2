@@ -24,7 +24,7 @@ const RolePassword = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-800 dark:text-white">Unique Password</h3>
-                <p className="text-sm text-gray-600 dark:text-white">Don't reuse passwords from other accounts</p>
+                <p className="text-sm text-gray-600 dark:text-white">{"Don't reuse passwords from other accounts"}</p>
               </div>
             </div>
             <div className="flex items-center">

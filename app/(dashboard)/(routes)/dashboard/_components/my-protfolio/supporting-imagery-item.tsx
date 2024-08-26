@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Chart from "./chart";
 import { cn } from "@/lib/utils";
-import { TiArrowDown } from "react-icons/ti";
-import { TiArrowUp } from "react-icons/ti";
+
 import { LuArrowUp } from "react-icons/lu";
 import { LuArrowDown } from "react-icons/lu";
 

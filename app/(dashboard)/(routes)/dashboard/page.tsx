@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@/components/ui/card";
+
 import SupportingImagery from "./_components/my-protfolio/supporting-imagery";
 import MyWatchList from "./_components/watch-list/my-watch-list";
 import Chart from "./_components/chart/chart";
@@ -14,7 +14,7 @@ const DashbroadPage = () => {
           <Chart></Chart>
         </div>
         <div className="xl:col-span-1  lg:col-span-2 w-full h-full ">
-        <MyWatchList></MyWatchList> 
+          <MyWatchList></MyWatchList>
         </div>
       </div>
     </div>

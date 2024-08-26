@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const HomePage = ({ children }: { children: React.ReactNode }) => {
+const HomePage = () => {
   return (
    < div className=" h-full w-full m-5  flex  gap-x-5 ">
      <Link href="/login" >

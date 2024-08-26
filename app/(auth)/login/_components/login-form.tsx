@@ -20,7 +20,6 @@ import { Form } from "@/components/ui/form";
 
 import toast from "react-hot-toast";
 
-import ButtonLogin from "../../_components/social-login-buttons";
 import { emailPasswordSchema } from "../../_components/validationSchemas";
 import Logo from "../../_components/logo";
 
@@ -117,7 +116,7 @@ const LoginForm = () => {
         <SocialLogins></SocialLogins>
 
         <div className="text-center text-sm text-gray-600 dark:text-white">
-          Don't have an account?{" "}
+       {" Don't have an account?"}
           <Link
             href="/sign-up"
             className="    font-semibold text-sm text-blue-600 hover:text-blue-800"

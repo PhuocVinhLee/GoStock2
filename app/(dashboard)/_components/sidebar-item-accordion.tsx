@@ -11,12 +11,12 @@ import {
 
 interface SidebarAccordionItemProps {
   parent: { icon: IconType; label: string };
-  children: { label: string; href: string }[];
+  child: { label: string; href: string }[];
 }
 
 const SidebarAccordionItem = ({
   parent,
-  children,
+  child,
 }: SidebarAccordionItemProps) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -45,7 +45,7 @@ const SidebarAccordionItem = ({
           </div>
         </AccordionTrigger>
         <div className="flex flex-col px-3 mb-3">
-          {children?.map((child, index) => (
+          {child?.map((child, index) => (
             <AccordionContent
               key={index}
               className="ms-5 p-2 rounded-md  dark:text-white  text-sm  transition-all hover:text-slate-600 hover:bg-slate-300/20"

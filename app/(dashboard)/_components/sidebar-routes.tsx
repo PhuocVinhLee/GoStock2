@@ -1,32 +1,20 @@
 "use client";
 
-import {
-  BarChart,
-  Compass,
-  FileQuestion,
-  FileQuestionIcon,
-  Layout,
-  List,
-  Users,
-  Home,
-  LayoutDashboard,
-  Wallet,
-  Newspaper,
-} from "lucide-react";
+
 import { RxDashboard } from "react-icons/rx";
 import { TbSmartHome } from "react-icons/tb";
 import { BiWallet } from "react-icons/bi";
 import { HiOutlineNewspaper } from "react-icons/hi";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { FaCaretDown } from "react-icons/fa";
+
 import { GrGroup } from "react-icons/gr";
 import { RiSettings3Line } from "react-icons/ri";
 import { FiPhone } from "react-icons/fi";
-import { VscBell } from "react-icons/vsc";
+
 
 import SidebarItem from "./sidebar-item";
 import { usePathname } from "next/navigation";
-import { Children } from "react";
+
 import SidebarAccordionItem from "./sidebar-item-accordion";
 
 const guestRoutes = [
@@ -59,7 +47,7 @@ const AccordionRoutes = [
       label: "Stock & fund",
       // href: "/stock&fund",
     },
-    children: [
+    child: [
       { label: "Stock", href: "/stock" },
       { label: "Cryptocurrency", href: "/cryptocurrency" },
       { label: "Mutual Fund", href: "/mutual-fund" },
@@ -102,7 +90,7 @@ const SidebarRoutes = () => {
         <SidebarAccordionItem
           key={index}
           parent={route.parent}
-          children={route.children}
+          child={route.child}
         ></SidebarAccordionItem>
       ))}
 

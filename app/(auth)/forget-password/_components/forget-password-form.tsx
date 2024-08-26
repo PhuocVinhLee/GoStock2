@@ -8,62 +8,28 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ImSad } from "react-icons/im";
 
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import {
-  ChevronUpIcon,
-  LockIcon,
-  MailIcon,
-  TrendingUpIcon,
-  BarChartIcon,
-  DollarSignIcon,
-  Loader2,
-  EyeOffIcon,
-  EyeIcon,
-} from "lucide-react";
 
-import Image from "next/image";
 import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
+import { Form } from "@/components/ui/form";
+
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import ButtonLogin from "../../_components/social-login-buttons";
+
 import { PasswordConfirmSchema } from "../../_components/validationSchemas";
 import Logo from "../../_components/logo";
 import CustomInput from "../../_components/custom-input";
 import SocialLogins from "../../_components/social-logins";
 
-const ButtonDataLogin = [
-  { src: "/asset/portfolio-list/google.png", label: "Google" },
-  { src: "/asset/portfolio-list/facebook.png", label: "Facebook" },
-];
-
 const ForgetPasswordForm = () => {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
-  const [handleErrorFromSever, setHandleErrorFromSever] = useState<null | {
-    type: string;
-    message: string;
-  }>(null);
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [isForgotPassword, setIsForgotPassword] = useState(false);
+
   const form = useForm<z.infer<typeof PasswordConfirmSchema>>({
     resolver: zodResolver(PasswordConfirmSchema),
     defaultValues: {
@@ -139,7 +105,7 @@ const ForgetPasswordForm = () => {
           className="text-center text-sm dark:text-white
          text-gray-600"
         >
-          Don't have an account?{" "}
+        {" Don't have an account?"}
           <Link
             href="/sign-up"
             className="text-sm font-semibold text-blue-600 hover:text-blue-800"

@@ -6,57 +6,7 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-const SupportingImageryData = [
-  {
-    id: 0,
-
-    src: "/asset/portfolio-list/apple1.jpg",
-    fullName: "Spotify",
-    shortname: "SPOT",
-    price: 310.4,
-    referred: -10,
-  },
-  {
-    id: 1,
-    src: "/asset/portfolio-list/facebook.png",
-    fullName: "Airbnb",
-    shortname: "ABNB",
-    price: 132.72,
-    referred: -10.29,
-  },
-  {
-    id: 2,
-    src: "/asset/portfolio-list/microsoft.png",
-    fullName: "playstation ",
-    shortname: "SPOT",
-    price: 140.86,
-    referred: 0.98,
-  },
-  {
-    id: 3,
-    src: "/asset/portfolio-list/google.png",
-    fullName: "playstation ",
-    shortname: "SPOT",
-    price: 140.98,
-    referred: 0.98,
-  },
-  {
-    id: 4,
-    src: "/asset/portfolio-list/mastercard.png",
-    fullName: "playstation ",
-    shortname: "SPOT",
-    price: 71.86,
-    referred: 0.98,
-  },
-  {
-    id: 5,
-    src: "/asset/my-watch-list/sony2.png",
-    fullName: "playstation ",
-    shortname: "SPOT",
-    price: 71.86,
-    referred: 0.98,
-  },
-];
+import { SupportingImageryData } from "./data";
 
 export default function SupportingImagery() {
   const [startIndex, setStartIndex] = useState(0);
