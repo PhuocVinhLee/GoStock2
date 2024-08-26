@@ -16,7 +16,7 @@ const DashboardPage = ({ children }: { children: React.ReactNode }) => {
         <Sidebar></Sidebar>
       </div>
 
-      <main className=" h-full lg:pl-72 pt-[100px] dark:bg-black/85 bg-slate-100/50">{children}</main>
+      <main className=" h-full lg:pl-72 pt-[100px] dark:bg-black/85 bg-slate-100/80">{children}</main>
     </div>
   );
 };

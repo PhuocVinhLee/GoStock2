@@ -78,20 +78,13 @@ const ForgetPasswordForm = () => {
 
       await new Promise((resolve) => setTimeout(resolve, 3000));
 
-      // router.push("/dashboard");
+      router.push("/dashboard");
       toast.success("You have successfully changed your password");
     } catch (error) {
       toast.error("Some thing went wrong!");
     } finally {
       setIsLogin(false);
     }
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
   };
 
   return (
@@ -142,8 +135,10 @@ const ForgetPasswordForm = () => {
       <CardFooter className="flex flex-col space-y-4 p-0">
         <SocialLogins></SocialLogins>
 
-        <div className="text-center text-sm dark:text-white
-         text-gray-600">
+        <div
+          className="text-center text-sm dark:text-white
+         text-gray-600"
+        >
           Don't have an account?{" "}
           <Link
             href="/sign-up"

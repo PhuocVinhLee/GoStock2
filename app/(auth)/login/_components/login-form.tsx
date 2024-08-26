@@ -27,6 +27,7 @@ import Logo from "../../_components/logo";
 import ButtonLink from "../../_components/button-link";
 import CustomInput from "../../_components/custom-input";
 import SocialLogins from "../../_components/social-logins";
+import { useRouter } from "next/navigation";
 
 const templateData = {
   email: "me@example.com",
@@ -34,6 +35,7 @@ const templateData = {
 };
 
 const LoginForm = () => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
 
   const form = useForm<z.infer<typeof emailPasswordSchema>>({
@@ -66,10 +68,11 @@ const LoginForm = () => {
         values.email === templateData.email &&
         values.password === templateData.password
       ) {
+        router.push("/dashboard");
+      toast.success("You have logged in successfully.");
       }
 
-      // router.push("/dashboard");
-      toast.success("You have logged in successfully.");
+      
     } catch (error) {
       toast.error("Some thing went wrong!");
     } finally {

@@ -16,7 +16,7 @@ const SearchInput = () => {
       <Input
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className=" w-5 sm:w-[250px]  md:w-[340px]  xl:w-[400px] lg:w-[280px] pl-9 dark:bg-custom-dark-bg dark:text-white rounded-xl bg-slate-200/20 focus-visible:ring-slate-200"
+        className=" w-5 sm:w-[250px]  md:w-[340px]  xl:w-[400px] lg:w-[280px] pl-9  dark:text-white dark:focus-visible:ring-white rounded-xl bg-slate-200/20 focus-visible:ring-slate-200 "
         placeholder={`Pre "${"⌘"}" to search for variours stocks...`}
       ></Input>
     </div>

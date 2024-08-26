@@ -49,7 +49,8 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
-        
+        'custom-placeholder': '#6B7280', // Customize this color
+
         // "custom-light-bg": "#f7f3e9",
         // "custom-dark-bg": "#2a2a2a",
         customDark: "hsl(222.2, 84%, 4.9%)",

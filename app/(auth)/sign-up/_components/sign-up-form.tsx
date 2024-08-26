@@ -55,7 +55,7 @@ const SignUpForm = () => {
 
       await new Promise((resolve) => setTimeout(resolve, 3000));
       
-      // router.push("/dashboard");
+     router.push("/dashboard");
       toast.success("You have sign up in successfully.");
     } catch (error) {
       toast.error("Some thing went wrong!");
