@@ -1,5 +1,5 @@
 Link demo: https://go-stock-gilt.vercel.app/
-Login page:
+\nLogin page:
 ![Login](https://github.com/user-attachments/assets/6b7d3735-0989-44f8-86dd-b0e995d75493)
 Sign up page: 
 ![signup](https://github.com/user-attachments/assets/5fb247c4-6714-4a28-ba4c-f3419a075c3a)
