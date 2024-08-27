@@ -1,5 +1,4 @@
 ## Link demo: https://go-stock-gilt.vercel.app/
-##
 1. Clone the Repository
 First, you need to clone the repository containing the Next.js code. Use the git clone command, followed by the repository
 ```bash
