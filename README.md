@@ -11,7 +11,8 @@
 ## Page for ipad:
 ![image](https://github.com/user-attachments/assets/fd301669-0796-410e-98e2-bc0f5eca7f2d)
 ## Page for Mobile:
-![image](https://github.com/user-attachments/assets/84e4b033-946b-41c4-86aa-aeacb8ce6b47)
+![image](https://github.com/user-attachments/assets/1b5bb893-1f8e-4148-a479-cdb524899ff7)
+
 
 
 
