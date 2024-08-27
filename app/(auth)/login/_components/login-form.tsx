@@ -28,11 +28,6 @@ import CustomInput from "../../_components/custom-input";
 import SocialLogins from "../../_components/social-logins";
 import { useRouter } from "next/navigation";
 
-const templateData = {
-  email: "me@example.com",
-  password: "Example@123456789",
-};
-
 const LoginForm = () => {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
@@ -49,29 +44,35 @@ const LoginForm = () => {
     try {
       setIsLogin(true);
 
-      await new Promise((resolve) => setTimeout(resolve, 3000));
-
-      if (values.email != templateData.email) {
-        return form.setError("email", {
-          type: "manual",
-          message: "Invalid email address.",
-        });
-      }
-      if (values.password != templateData.password) {
-        return form.setError("password", {
-          type: "manual",
-          message: "Invalid password.",
-        });
-      }
-      if (
-        values.email === templateData.email &&
-        values.password === templateData.password
-      ) {
+      // await new Promise((resolve) => setTimeout(resolve, 3000));
+      const { email, password } = values;
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+      if (res.ok) {
         router.push("/dashboard");
-      toast.success("You have logged in successfully.");
+        toast.success("You have logged in successfully.");
+      } else {
+        switch (data.message) {
+          case "Invalid email":
+            form.setError("email", {
+              type: "manual",
+              message: "The email address you entered does not exist.",
+            });
+            break;
+          case "Invalid password":
+            form.setError("password", {
+              type: "manual",
+              message: "The password you entered is incorrect.",
+            });
+            break;
+        }
       }
-
-      
     } catch (error) {
       toast.error("Some thing went wrong!");
     } finally {
@@ -116,7 +117,7 @@ const LoginForm = () => {
         <SocialLogins></SocialLogins>
 
         <div className="text-center text-sm text-gray-600 dark:text-white">
-       {" Don't have an account?"}
+          {" Don't have an account?"}
           <Link
             href="/sign-up"
             className="    font-semibold text-sm text-blue-600 hover:text-blue-800"

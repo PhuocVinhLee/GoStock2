@@ -12,9 +12,7 @@ interface ButtonLoginProp {
 const ButtonLogin = ({ src, label }: ButtonLoginProp) => {
   const router = useRouter();
   const handelLogin =  () => {
-    console.log("kascansclansc");
-     router.push("/dashboard");
-    toast.success(`You have successfully logged in by ${label} `);
+   
   };
   return (
     <Button

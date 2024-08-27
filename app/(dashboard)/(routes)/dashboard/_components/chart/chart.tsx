@@ -33,7 +33,7 @@ const Chart = () => {
         </CardTitle>
       </CardHeader>
       <CardContent className="  space-y-7  ">
-        <div className="mb-4  flex flex-wrap items-center justify-stretch gap-5 px-10">
+        <div className="mb-4  flex flex-wrap items-center justify-stretch gap-5 px-5">
           {timeRanges.map((range) => (
             <Button
               key={range.key}
