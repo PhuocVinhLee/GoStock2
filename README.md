@@ -1,3 +1,5 @@
+## Link demo: https://go-stock-gilt.vercel.app/
+##
 1. Clone the Repository
 First, you need to clone the repository containing the Next.js code. Use the git clone command, followed by the repository
 ```bash
@@ -28,7 +30,6 @@ npm run dev
 ```
 The development server will usually start on http://localhost:3000 by default. You can open your browser and navigate to this URL to view the running application.
 
-## Link demo: https://go-stock-gilt.vercel.app/
 ## Login page:
 ![Login](https://github.com/user-attachments/assets/6b7d3735-0989-44f8-86dd-b0e995d75493)
 ## Sign up page: 
