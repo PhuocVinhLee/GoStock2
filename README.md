@@ -5,6 +5,14 @@
 ![signup](https://github.com/user-attachments/assets/5fb247c4-6714-4a28-ba4c-f3419a075c3a)
 ## Forget password page:
 ![forgetpassword](https://github.com/user-attachments/assets/b016a18f-109b-4cc2-9491-fbebb2812674)
+## Full Page:
+![image](https://github.com/user-attachments/assets/ebfdcfa5-6640-4cba-bbaf-64435ef85f46)
+![image](https://github.com/user-attachments/assets/c39d3335-91c1-4345-a8c0-adbe69f64205)
+## Page for ipad:
+![image](https://github.com/user-attachments/assets/fd301669-0796-410e-98e2-bc0f5eca7f2d)
+## Page for Mobile:
+![image](https://github.com/user-attachments/assets/84e4b033-946b-41c4-86aa-aeacb8ce6b47)
+
 
 
 ## Getting Started
