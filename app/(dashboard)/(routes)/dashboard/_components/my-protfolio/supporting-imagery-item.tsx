@@ -25,7 +25,7 @@ const SupportingImageryItem = ({
   className,
 }: SupportingImageryItemProps) => {
   return (
-    <div className=" p-5   flex flex-col gap-y-5  w-full  ">
+    <div className=" sm:p-5 p-2   flex flex-col gap-y-5  w-full  ">
       <div className="flex items-center justify-between ">
         <div className=" w-full flex items-center  gap-x-2">
           <div className="relative">
