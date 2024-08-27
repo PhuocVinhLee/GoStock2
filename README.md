@@ -1,3 +1,45 @@
+1. Clone the Repository
+First, you need to clone the repository containing the Next.js code. Use the git clone command, followed by the repository
+
+bash
+Sao chép mã
+git clone https://github.com/your-username/your-repository.git
+Replace `https://github.com/your-username/your-repository.git with the URL of t
+
+2. Navigate to the Project Directory
+Change your working directory to the cloned project directory:
+
+bash
+Sao chép mã
+cd your-repository
+Replace your-repository with the name of
+
+3. Install Dependencies
+Before running the project, you need to install the required dependencies. Next.js projects usually use npm or yarn for package management. Run one of the following commands to install the dependencies:
+
+Using npm:
+
+bash
+Sao chép mã
+npm install
+Using yarn:
+
+bash
+yarn install
+4. Run the Development Server
+Once the dependencies are installed, you can start the development server. This will compile the project and make it available locally:
+
+Using npm:
+
+bash
+npm run dev
+Using yarn:
+
+bash
+yarn dev
+The development server will usually start on http://localhost:3000 by default. You can open your browser and navigate to this URL to view the running application.
+
+
 ## Link demo: https://go-stock-gilt.vercel.app/
 ## Login page:
 ![Login](https://github.com/user-attachments/assets/6b7d3735-0989-44f8-86dd-b0e995d75493)
