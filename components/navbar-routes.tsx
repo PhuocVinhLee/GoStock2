@@ -26,6 +26,7 @@ const NavbarRoutes = () => {
   const router = useRouter();
   const { logout } = useLogout();
 
+
   return (
     <>
       {
@@ -68,7 +69,7 @@ const NavbarRoutes = () => {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <h4 className=" font-bold flex items-center justify-between gap-x-3 ">
-                 <div className=" hidden lg:block"> {user?.email}</div>
+                  <div className=" hidden lg:block"> {user?.email}</div>
                   <DropdownMenu>
                     <DropdownMenuTrigger>
                       <FaAngleDown />
@@ -79,7 +80,9 @@ const NavbarRoutes = () => {
                       <DropdownMenuItem>Profile</DropdownMenuItem>
                       <DropdownMenuItem>Billing</DropdownMenuItem>
                       <DropdownMenuItem>Team</DropdownMenuItem>
-                      <DropdownMenuItem onClick={logout}>
+                      <DropdownMenuItem onClick={()=>{
+                        logout()
+                      }}>
                         Logout
                       </DropdownMenuItem>
                     </DropdownMenuContent>

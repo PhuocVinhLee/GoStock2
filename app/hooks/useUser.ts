@@ -1,5 +1,5 @@
-"use client"
-import { useEffect, useState } from 'react';
+"use client";
+import { useEffect, useState } from "react";
 
 interface UserInfo {
   email: string;
@@ -13,7 +13,12 @@ function useUser() {
     const fetchUser = async () => {
       try {
         setLoading(true);
-        const response = await fetch('/api/auth/user');
+        const response = await fetch("/api/auth/user", {
+          method: "GET",
+          headers: {
+            "Cache-Control": "no-cache",
+          },
+        });
         const data = await response.json();
 
         if (data.authenticated) {
@@ -23,7 +28,7 @@ function useUser() {
         }
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching user info:', error);
+        console.error("Error fetching user info:", error);
         setUser(null);
       } finally {
         setLoading(false);

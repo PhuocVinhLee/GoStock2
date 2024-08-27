@@ -29,6 +29,7 @@ import SocialLogins from "../../_components/social-logins";
 import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
+  console.log(" login")
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(false);
 
@@ -50,6 +51,7 @@ const LoginForm = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Cache-Control": "no-cache",
         },
         body: JSON.stringify({ email, password }),
       });
@@ -57,6 +59,7 @@ const LoginForm = () => {
       if (res.ok) {
         router.push("/dashboard");
         toast.success("You have logged in successfully.");
+        router.refresh()
       } else {
         switch (data.message) {
           case "Invalid email":

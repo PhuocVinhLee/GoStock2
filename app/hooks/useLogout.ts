@@ -17,6 +17,7 @@ const useLogout = () => {
 
       // Redirect to login or home page after successful logout
       router.push('/login'); // Change to the route where you want to redirect
+  router.refresh();
     } catch (error) {
       console.error('Logout failed:', error);
     }
