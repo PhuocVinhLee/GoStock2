@@ -26,14 +26,14 @@ const Chart = () => {
   };
 
   return (
-    <Card className="  border-none rounded-2xl h-full shadow-me p-7 lg:p-3 xl:p-7">
-      <CardHeader className="p-5  mb-2">
+    <Card className="  border-none rounded-2xl h-full shadow-me p-2 sm:p-3 xl:p-7 ">
+      <CardHeader className="sm:p-5 p-2  mb-2">
         <CardTitle>
           <HeaderChart />
         </CardTitle>
       </CardHeader>
-      <CardContent className="  space-y-7  ">
-        <div className="mb-4  flex flex-wrap items-center justify-stretch gap-5 px-5">
+      <CardContent className="  space-y-7  sm:p-2  p-0  ">
+        <div className="mb-4  flex flex-wrap items-center justify-stretch sm:gap-5 gap-2 sm:px-5 px-2">
           {timeRanges.map((range) => (
             <Button
               key={range.key}

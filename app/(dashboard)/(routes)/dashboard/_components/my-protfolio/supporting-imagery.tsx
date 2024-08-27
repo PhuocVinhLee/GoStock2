@@ -94,7 +94,7 @@ export default function SupportingImagery() {
 
       <Button
         onClick={handleBackClick}
-        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2  absolute p-2 bg-white  rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
+        className={`   left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 ms-3 sm:ms-0 absolute p-2  bg-white  rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
           showBackButton ? "opacity-100" : " hidden"
         }`}
         disabled={!showBackButton}
@@ -103,7 +103,7 @@ export default function SupportingImagery() {
       </Button>
       <Button
         onClick={handleNextClick}
-        className={`  right-0  top-1/2 -translate-y-1/2 translate-x-1/2  absolute p-2  bg-white rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
+        className={`  right-0  top-1/2 -translate-y-1/2 translate-x-1/2  ms-3 sm:ms-0 absolute p-2  bg-white rounded-full shadow-md hover:bg-gray-200 transition-colors duration-200 ${
           showNextButton ? "opacity-100" : " hidden"
         }`}
         disabled={!showNextButton}

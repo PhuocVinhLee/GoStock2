@@ -68,7 +68,7 @@ const NavbarRoutes = () => {
                   <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
                 <h4 className=" font-bold flex items-center justify-between gap-x-3 ">
-                  {user?.email}
+                 <div className=" hidden lg:block"> {user?.email}</div>
                   <DropdownMenu>
                     <DropdownMenuTrigger>
                       <FaAngleDown />
