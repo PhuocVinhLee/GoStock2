@@ -26,7 +26,7 @@ const Chart = () => {
   };
 
   return (
-    <Card className="  border-none rounded-2xl h-full shadow-me p-2 sm:p-3 xl:p-7 ">
+    <Card className="  border-none rounded-2xl h-full shadow-sm p-2 sm:p-3 xl:p-7 ">
       <CardHeader className="sm:p-5 p-2  mb-2">
         <CardTitle>
           <HeaderChart />

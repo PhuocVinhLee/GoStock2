@@ -59,7 +59,7 @@ export default function SupportingImagery() {
     startIndex + visibleItems < SupportingImageryData.length;
 
   return (
-    <Card className=" relative  shadow-sm border-none  bg-white/65 dark:bg-customDark/60  w-full   grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-3xl gap-x-3 lg:gap-x-1 md:gap-x-16 p-7 lg:p-3 xl:p-7">
+    <Card className=" relative  shadow-sm border-none  bg-white/65 dark:bg-customDark/60  w-full   grid grid-cols-1  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 rounded-2xl gap-x-3 lg:gap-x-1 md:gap-x-16 p-7 lg:p-3 xl:p-7">
       {SupportingImageryData?.slice(startIndex, startIndex + visibleItems)?.map(
         (data, index) => (
           <div
